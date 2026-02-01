@@ -44,10 +44,8 @@ jobs:
         with:
           context: .
           push: true
-          build-args: |
-            MAJOR=${{ env.MAJOR }}
-            MAJOR_MINOR=${{ env.MAJOR }}.${{ env.MINOR }}
-            MAJOR_MINOR_PATCH=${{ env.VERSION }}
+          build-args: >
+            CADDY_VERSION=${{ env.VERSION }}
           tags: |
             touhidurrr/hardenen-caddy-cloudflare:latest
             touhidurrr/hardenen-caddy-cloudflare:${{ env.MAJOR }}
