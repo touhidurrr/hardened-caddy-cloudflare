@@ -37,4 +37,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: touhidurrr/hardenen-caddy-cloudflare:latest,touhidurrr/hardenen-caddy-cloudflare:${{ env.CADDY_VERSION }}
+          build-args: >
+            CADDY_VERSION=${{ env.CADDY_VERSION }}
+          tags: |
+            touhidurrr/hardenen-caddy-cloudflare:latest
+            touhidurrr/hardenen-caddy-cloudflare:${{ env.CADDY_VERSION }}
