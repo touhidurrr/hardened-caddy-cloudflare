@@ -7,7 +7,7 @@ on:
     paths:
       - .github/workflows/check_latest.yml
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
