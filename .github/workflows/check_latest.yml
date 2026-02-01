@@ -19,8 +19,7 @@ jobs:
           TAG_NAME=$(curl -s https://api.github.com/repos/caddyserver/caddy/releases/latest | jq -r .tag_name)
 
           VERSION=${TAG_NAME#v}
-          echo "Latest Caddy Version is $VERSION" >> $GITHUB_OUTPUT
-
+          echo "CADDY_VERSION=$VERSION" >> $GITHUB_OUTPUT
           echo "CADDY_VERSION=$VERSION" > .env
 
       - name: Commit
