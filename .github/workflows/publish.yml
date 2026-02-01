@@ -48,7 +48,7 @@ jobs:
           build-args: >
             CADDY_VERSION=${{ env.VERSION }}
           tags: |
-            touhidurrr/hardenen-caddy-cloudflare:latest
-            touhidurrr/hardenen-caddy-cloudflare:${{ env.MAJOR }}
-            touhidurrr/hardenen-caddy-cloudflare:${{ env.MAJOR }}.${{ env.MINOR }}
-            touhidurrr/hardenen-caddy-cloudflare:${{ env.VERSION }}
+            touhidurrr/hardened-caddy-cloudflare:latest
+            touhidurrr/hardened-caddy-cloudflare:${{ env.MAJOR }}
+            touhidurrr/hardened-caddy-cloudflare:${{ env.MAJOR }}.${{ env.MINOR }}
+            touhidurrr/hardened-caddy-cloudflare:${{ env.VERSION }}
