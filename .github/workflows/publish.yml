@@ -34,6 +34,9 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
 
+      - name: Read versions.env
+        run: cat versions.env > $GIHUB_ENV
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
         env:
@@ -41,8 +44,12 @@ jobs:
         with:
           context: .
           push: true
-          build-args: >
-            CADDY_VERSION=${{ env.CADDY_VERSION }}
+          build-args: |
+            MAJOR=${{ env.MAJOR }}
+            MAJOR_MINOR=${{ env.MAJOR }}.${{ env.MINOR }}
+            MAJOR_MINOR_PATCH=${{ env.VERSION }}
           tags: |
             touhidurrr/hardenen-caddy-cloudflare:latest
-            touhidurrr/hardenen-caddy-cloudflare:${{ env.CADDY_VERSION }}
+            touhidurrr/hardenen-caddy-cloudflare:${{ env.MAJOR }}
+            touhidurrr/hardenen-caddy-cloudflare:${{ env.MAJOR }}.${{ env.MINOR }}
+            touhidurrr/hardenen-caddy-cloudflare:${{ env.VERSION }}
