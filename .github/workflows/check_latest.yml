@@ -27,5 +27,5 @@ jobs:
           git config --global user.name 'Md. Touhidur Rahman'
           git config --global user.email 'touhidurrr@pm.me'
           git add .env
-          git commit -m "Update Caddy Version"
+          git commit -m "Update Caddy Version to ${{ steps.update_version.outputs.CADDY_VERSION }}"
           git push
