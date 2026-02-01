@@ -25,7 +25,7 @@ jobs:
             echo "MAJOR=$MAJOR"
             echo "MINOR=$MINOR"
             echo "PATCH=$PATCH"
-          } > versions.env
+          } >> versions.env
 
           echo "CADDY_VERSION=$VERSION" >> $GITHUB_OUTPUT
 
