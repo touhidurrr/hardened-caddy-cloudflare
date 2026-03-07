@@ -8,16 +8,7 @@ docker pull touhidurrr/hardened-caddy-cloudflare
 
 Then follow this guide: https://hub.docker.com/hardened-images/catalog/dhi/caddy/guides
 
-## Important Notes
-The documentation in DHI Guide is mostly fine, but a couple of things needs to be fixed for better persistance.
-
-### Directories:
-
-Config: `/home/nonroot/.config/caddy`
-
-Data: `/home/nonroot/.local/share/caddy`
-
-This `compose.yml` works:
+## Docker Compose
 ```yml
 services:
   caddy:
@@ -30,8 +21,8 @@ services:
       - "443:443/udp"
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./caddy/data:/home/nonroot/.local/share/caddy
-      - ./caddy/config:/home/nonroot/.config/caddy
+      - ./caddy/data:/data/caddy
+      - ./caddy/config:/config/caddy
       # (Optional) in case you are using Unix domain sockets like me
       - ./sockets:/sockets
     environment:
