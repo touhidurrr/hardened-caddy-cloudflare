@@ -1,4 +1,4 @@
-name: Update versions.env
+name: Check lastest version & update versions.env
 
 on:
   push:
