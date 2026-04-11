@@ -5,8 +5,11 @@ on:
     branches:
       - main
     paths:
-      - versions.env
+      - .github/workflows/publish.yml
+  schedule:
+    - cron: "0 0 * * *" # Daily Builds
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   publish:
@@ -36,7 +39,7 @@ jobs:
 
       - name: Read versions.env
         run: cat versions.env >> $GITHUB_ENV
-          
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v7
         env:

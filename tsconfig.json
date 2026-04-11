@@ -1,0 +1,10 @@
+{
+  "include": ["scripts/**/*"],
+  "compilerOptions": {
+    "types": ["bun"],
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true
+  }
+}
