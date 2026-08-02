@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - Dockerfile
       - .github/workflows/publish.yml
   schedule:
     - cron: "0 0 * * *" # Daily Builds
