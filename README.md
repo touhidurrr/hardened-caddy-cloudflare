@@ -1,5 +1,5 @@
 # Hardened Caddy Cloudflare
-Docker Hardened Caddy Image with Caddy Cloudflare Module
+Docker Hardened Caddy Image with [Cloudflare](https://github.com/caddy-dns/cloudflare) & [Cloudflare IP](https://github.com/WeidiDeng/caddy-cloudflare-ip) (for trust proxy)  Modules
 
 ## Usage
 ```
